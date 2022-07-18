@@ -13,6 +13,12 @@ const postRoutes = require("./router/routes")
 app.use(bodyparser.json());
 app.use('/api', postRoutes);
 
+app.get('/', (req, res) => {
+    res.json({
+        message:"running"
+    })
+})
+
 
 //mongo --- command -----> aggregate function ------  -> mongoose[node modules]===> mongo setup
 mongoose.connect("mongodb+srv://user:user@cluster0.0embh.mongodb.net/?retryWrites=true&w=majority")
